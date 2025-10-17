@@ -60,7 +60,7 @@ public class UsuarioController {
 
 
     @PostMapping
-    @Operation(summary = "Salvar Usuério", description = "Método resposavel em criar usuarios!")
+    @Operation(summary = "Salvar Usuário", description = "Método resposavel em criar usuarios!")
     public ResponseEntity<UsuarioResponseDto> salvarUsuario(@RequestBody UsuarioRequestDto usuario){
 
         try {
@@ -73,6 +73,10 @@ public class UsuarioController {
             return ResponseEntity.badRequest().build();
         }
     }
+
+
+
+
 
 
 

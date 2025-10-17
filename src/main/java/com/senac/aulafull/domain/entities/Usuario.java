@@ -47,6 +47,8 @@ public class Usuario implements UserDetails {
 
     private LocalDateTime dataCadastro;
 
+    private String tokenSenha;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
 
