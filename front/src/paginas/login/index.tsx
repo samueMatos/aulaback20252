@@ -1,27 +1,13 @@
-import axios from "axios";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { loginSucesso, logout } from "../../redux/authSlice";
-
-interface LoginRequest {
-  email: string,
-  senha: string
-}
-
-interface LoginResponse {
-  token: string
-}
+import { loginSucesso } from "../../redux/authSlice";
+import { LoginNovo, type LoginRequest } from "../../services/authService";
 
 
 function Login() {
   const navigator = useNavigate();
   const dispatch = useDispatch();
-
-
-  const API_URL = "http://localhost:8080/"
-
-
 
   const [formData, setFormData] = useState<LoginRequest>({
     email: '',
@@ -42,9 +28,9 @@ function Login() {
 
     try {
 
-      const response = await axios.post<LoginResponse>(API_URL + "auth/login", formData);
+      const loginResponse = await LoginNovo(formData);
+      const token = loginResponse.token;
 
-      const token = response.data.token;
       console.log(token);
       if (token != null) {
 

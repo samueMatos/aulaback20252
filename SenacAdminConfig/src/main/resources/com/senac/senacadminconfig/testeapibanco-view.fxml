@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.senac.senacadminconfig.controller.TesteApiBancoController">
+   <children>
+      <Button layoutX="234.0" layoutY="161.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
+      <Button layoutX="14.0" layoutY="161.0" mnemonicParsing="false" onAction="#consultarCep" text="Consultar" />
+      <Label layoutX="20.0" layoutY="29.0" text="CEP" />
+      <TextField fx:id="txtCep" layoutX="55.0" layoutY="25.0" prefHeight="25.0" prefWidth="224.0" />
+      <TextArea fx:id="txtEndereco" disable="true" editable="false" layoutX="57.0" layoutY="59.0" prefHeight="83.0" prefWidth="224.0" />
+      <Label layoutX="9.0" layoutY="92.0" text="Enderço" />
+   </children>
+</AnchorPane>
