@@ -27,6 +27,7 @@ public class SecurityConfiguration {
                         auth
                                 .requestMatchers("/auth/login").permitAll()
                                 .requestMatchers("/auth/esqueciminhasenha").permitAll()
+                                .requestMatchers("/auth/registrarnovasenha").permitAll()
                                 .requestMatchers(HttpMethod.OPTIONS,"/**").permitAll()
                                 .requestMatchers("/swagger-resources/**").permitAll()
                                 .requestMatchers("/swagger-ui/**").permitAll()

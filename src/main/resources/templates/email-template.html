@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flores de FILO - Seu Envio</title>
+    <style>
+        /* Reset de Estilos Básico */
+        body { margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f4f4f4; }
+        table { border-collapse: collapse; width: 100%; }
+        td, th { padding: 0; }
+        a { text-decoration: none; color: #004d99; }
+
+        /* Estilos do Container Principal (Para o degradê) */
+        .email-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden; /* Para garantir que o gradiente não vaze */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header com Degradê Azul */
+        .header {
+            background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%); /* Azul Degradê */
+            padding: 20px;
+            text-align: center;
+            color: #ffffff;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        /* Estilo da Seção de Flores (Para o toque temático) */
+        .flowers-banner {
+            background-color: #e6f7ff; /* Azul claro para o banner */
+            padding: 10px 0;
+            text-align: center;
+        }
+        .flower-icon {
+            font-size: 24px;
+            color: #0077b6; /* Azul forte */
+            margin: 0 10px;
+            /* Se possível, use uma imagem de flor real aqui */
+        }
+
+        /* Corpo do Conteúdo */
+        .content {
+            padding: 30px;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        .content p {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        /* Rodapé */
+        .footer {
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #777777;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        /* Variáveis de Template */
+        .highlight {
+            font-weight: bold;
+            color: #0077b6;
+        }
+    </style>
+</head>
+<body>
+<table role="presentation" class="email-container">
+    <tr>
+        <td class="header">
+            <h1>Flores de FILO</h1>
+            <p style="margin: 5px 0 0;">Entrega de Emoções e Cores</p>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="flowers-banner">
+            <span class="flower-icon">🌸</span>
+            <span class="flower-icon">🌼</span>
+            <span class="flower-icon">🌺</span>
+            <span class="flower-icon">🌷</span>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="content">
+            <p>Prezado(a) Cliente,</p>
+
+            <p>
+                Temos uma nova comunicação importante para você. Abaixo, estão os detalhes do seu envio:
+            </p>
+
+            <div style="border: 1px solid #0077b6; padding: 15px; border-radius: 5px; background-color: #f9f9f9; margin-bottom: 25px;">
+                <p style="font-style: italic; color: #555;">
+                    <span class="highlight">Mensagem:</span> <br>
+                    ${mensagem}
+                </p>
+            </div>
+
+            <p>
+                Este e-mail foi enviado em: <span class="highlight">${dataEnvio}</span>.
+            </p>
+
+            <p>
+                Agradecemos a sua preferência pela <strong>Flores de FILO</strong>. Estamos sempre à disposição para tornar os seus momentos ainda mais especiais.
+            </p>
+
+            <table role="presentation" style="margin: 25px auto 0; width: auto;">
+                <tr>
+                    <td align="center" style="border-radius: 4px; background-color: #0077b6;">
+                        <a href="[LINK PARA O SEU SITE]" target="_blank" style="padding: 12px 25px; border: 1px solid #0077b6; border-radius: 4px; display: inline-block; color: #ffffff; font-weight: bold; text-decoration: none;">
+                            Visite Nosso Site
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="footer">
+            <p>&copy; ${dataEnvio.substring(0, 4)} Flores de FILO | Todos os direitos reservados.</p>
+            <p>Rua das Rosas, 123 - Cidade das Flores</p>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

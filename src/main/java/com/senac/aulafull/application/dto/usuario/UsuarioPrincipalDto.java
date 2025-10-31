@@ -5,12 +5,13 @@ import org.springframework.security.core.GrantedAuthority;
 
 import java.util.Collection;
 
-public record UsuarioPrincipalDto(Long id, String email , Collection<? extends GrantedAuthority> autorizacao) {
+public record UsuarioPrincipalDto(Long id, String email, Long empresaId , Collection<? extends GrantedAuthority> autorizacao) {
 
     public UsuarioPrincipalDto(Usuario usuario) {
         this(
                 usuario.getId(),
                 usuario.getEmail(),
+                usuario.getId(),
                 usuario.getAuthorities()
         );
     }

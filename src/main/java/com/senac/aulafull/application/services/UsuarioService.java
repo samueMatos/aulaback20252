@@ -2,6 +2,7 @@ package com.senac.aulafull.application.services;
 
 import com.senac.aulafull.application.dto.login.EsqueciMinhaSenhaDto;
 import com.senac.aulafull.application.dto.login.LoginResquestDto;
+import com.senac.aulafull.application.dto.usuario.RegistrarNovaSenhaDto;
 import com.senac.aulafull.application.dto.usuario.UsuarioPrincipalDto;
 import com.senac.aulafull.application.dto.usuario.UsuarioRequestDto;
 import com.senac.aulafull.application.dto.usuario.UsuarioResponseDto;
@@ -114,11 +115,28 @@ public class UsuarioService {
 
             usuarioRepository.save(usuario);
 
-            iEnvioEmail.enviarEmailSimples(esqueciMinhaSenhaDto.email(),
+            iEnvioEmail.enviarEmailComTemplate(esqueciMinhaSenhaDto.email(),
                     "Código Recuperacao",
                     codigo
             );
         }
+    }
+
+    public void registrarNovaSenha(RegistrarNovaSenhaDto registrarNovaSenhaDto) {
+
+
+        var usuario = usuarioRepository
+                .findByEmailAndTokenSenha(
+                        registrarNovaSenhaDto.email(),
+                        registrarNovaSenhaDto.token())
+                .orElse(null);
+
+        if (usuario!=null){
+
+            usuario.setSenha(registrarNovaSenhaDto.senha());
+            usuarioRepository.save(usuario);
+        }
+
     }
 }
    
